@@ -8,15 +8,29 @@ function registrationNumbers() {
     var myRegNumbers = [];
     var regNumber = "";
     function setRegNum(Num) {
-        var regNum = Num.trim();
-    
-        if (pattern.test(regNum)) {
-            regNumber = regNum;
-            myRegNumbers.push(regNumber);
-            return true;
+        if (Num) {
+            
+            var regNum = Num.trim();
+        
+            if (pattern.test(regNum)) {
+                regNumber = regNum;
+                myRegNumbers.push(regNumber);
+                return true;
+            }
+            else {
+                return error(regNum);
+            }
         }
         else {
-            return false;
+            return error(regNum);
+        }
+    }
+    function error(regNum){
+        if (!regNum||regNum==="") {
+            return "Please enter a registration number";
+        }
+        else if (!pattern.test(regNum)) {
+            return "Error!registration number added is in an incorrect format"
         }
     }
     function getRegNum() {
@@ -63,5 +77,6 @@ function registrationNumbers() {
         getRegNum,
         addRegNum,
         cityFilter,
+        error,
     }
 }

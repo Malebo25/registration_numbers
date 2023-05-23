@@ -5,9 +5,10 @@ describe("set registration numbers", function () {
     registration.setRegNum("ca-250-889");
     assert.equal("ca-250-889", registration.getRegNum());
   });
-  it("It should set registration numbers", function () {
+  it("It should not set registration numbers in a wrong format", function () {
     let registration = registrationNumbers();
     registration.setRegNum("ck2508");
+    assert.equal('Error!registration number added is in an incorrect format',registration.setRegNum("ck2508"));
     assert.equal(false, registration.getRegNum());
   });
   it("It should set registration numbers", function () {
@@ -20,10 +21,10 @@ describe("set registration numbers", function () {
     registration.setRegNum("CJ-250-800");
     assert.equal("CJ-250-800", registration.getRegNum());
   });
-  it("It should set registration numbers", function () {
+  it("It should not set an empty registration number", function () {
   let registration = registrationNumbers();
-  registration.setRegNum("k2508");
-  assert.equal(false, registration.getRegNum());
+  
+  assert.equal("Please enter a registration number",registration.setRegNum(""));
   });
     
   
