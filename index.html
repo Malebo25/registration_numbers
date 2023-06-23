@@ -4,29 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/simple-grid.min.css">
-    <link rel="stylesheet" href="/css/regnumbers.css">
+    <link rel="stylesheet" href="css/simple-grid.min.css">
+    <link rel="stylesheet" href="css/regnumbers.css">
     <title>Display registration numbers</title>
 </head>
 <body>
    <div class="row">
-    <div class="col-12">
+    <center>
 
-        <div class="col-8">
-            <form action="">
-                <label for="regname">Registration Number:</label>
-                
-                <input type="text" name="regname" id="" class="regText" value="">
-            </form>
-        </div>
-        <div class="col-4">
+        <div class="col-12">
     
-            <button>
-                add
-            </button>
-        </div>
-    </div>
+            <div class="col-6">
+                <form action="">
+                    <label for="regname">Registration Number:</label>
+                    
+                    <input type="text" name="regname" id="regText" class="regText" value="">
+                </form>
+            </div>
+            <div class="col-4 addBtn">
+        
+                <button>
+                    add
+                </button>
+            </div>
+            <label for="cars">Choose a city:</label>
+            
+            <select name="cars" id="regLocation" class="regLocation">
+                <option value="Cape Town">Cape-Town</option>
+                <option value="Malmesbury">Malmesbury</option>
+                <option value="Stellenbosch">Stellenbosch</option>
+                <option value="Paarl">Paarl</option>
+            </select>
 
-   </div> 
+
+            
+            
+            
+        </div>
+    </center>
+</div> 
+    <center>
+
+        <ul>
+            <li id ="regList"></li>
+    
+        </ul>
+    </center>
+    <script src="js/regNum.js" charset="utf-8"></script>
+    <script src="js/registrationDom.js" charset="utf-8"></script>
+
 </body>
 </html>

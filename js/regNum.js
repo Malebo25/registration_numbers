@@ -41,22 +41,30 @@ function registrationNumbers() {
     function addRegNum() {
         return myRegNumbers;
     }
+  function regBreakDown(){
+    const reglist = document.getElementById("regList");
+    for (let carReg of myRegNumbers){
+      let listItem = document.createElement("li");
+      listItem.textContent = carReg;
+      reglist.appendChild(listItem);
+    } 
+  }
     function cityFilter(city) {
         for (var i = 0; i < myRegNumbers.length; i++){
-            if (city === "capetown") {
+            if (city === "Cape town") {
               if (caTest.test(myRegNumbers[i])) {
                 cityList.push(myRegNumbers[i]);
               }
-            } else if (city === "malmesbury") {
+            } else if (city === "Malmesbury") {
               if (ckTest.test(myRegNumbers[i])) {
                 cityList.push(myRegNumbers[i]);
               }
-            } else if (city === "stellenbosch") {
+            } else if (city === "Stellenbosch") {
               if (clTest.test(myRegNumbers[i])) {
                 cityList.push(myRegNumbers[i]);
               }
             }
-            else if (city === "paarl") {
+            else if (city === "Paarl") {
               if (cjTest.test(myRegNumbers[i])) {
                 cityList.push(myRegNumbers[i]);
               }
@@ -78,5 +86,7 @@ function registrationNumbers() {
         addRegNum,
         cityFilter,
         error,
+        regBreakDown,
+        
     }
 }
